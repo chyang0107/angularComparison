@@ -10,5 +10,12 @@ function addTodo(){
     }
     var todoLi = document.createElement('LI');
     todoLi.textContent = userInput;
+    todoLi.addEventListener('click', removeTodo)
     ulEl.appendChild(todoLi);
 }
+
+function removeTodo(event) {
+    var clickedLi = event.target;
+    // removeChild should be invoked on the parent, i.e.:
+    clickedLi.parentNode.removeChild(clickedLi);
+  }
