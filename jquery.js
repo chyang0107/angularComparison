@@ -1,4 +1,4 @@
-var inoutEl = document.querySelector('input')
+var inputEl = document.querySelector('input')
 var buttonEl = document.querySelector('button')
 var ulEl = document.querySelector('ul')
 buttonEl.addEventListener('click', addTodo)
