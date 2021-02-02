@@ -335,7 +335,9 @@
     <button (click)="onChangeName()">Change Name</button>
     <button (click)="onAddElement()">New Element</button>
     <ul>
-      <li *ngFor="let ele of elements">Element {{ele}}</li>
+      <li *ngFor="let ele of elements" 
+      [id] = "'element ' + ele"
+      [ngStyle]="{backgroundColor: getColor(ele)}" >Element {{ele}}</li>
     </ul>
 
     <svg id="rocket-smoke" alt="Rocket Ship Smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
