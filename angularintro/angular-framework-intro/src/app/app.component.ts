@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'Mary';
+  elements: number[] = [];
+
   onChangeName(){
     this.name = 'Anna';
   }
+
+  onAddElement(){
+    this.elements.push(this.elements.length+1);
+  }
+
 }
