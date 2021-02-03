@@ -329,9 +329,10 @@
         </g>
       </g>
     </svg>
-
-    <span>{{ name }} app is running!</span>
-    <p *ngIf="name == 'Hank'" >Name updated!</p>
+    
+    <span [ngClass]="{updated: name != 'Hank'}" >{{ name }} app is running!</span>
+    <app-username></app-username>
+    <p *ngIf="name != 'Hank'" >Name updated!</p>
     <button (click)="onChangeName()">Change Name</button>
     <button (click)="onAddElement()">New Element</button>
     <ul>
