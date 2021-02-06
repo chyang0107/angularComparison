@@ -329,14 +329,15 @@
         </g>
       </g>
     </svg>
-    
+
     <span [ngClass]="{updated: name != 'Hank'}" >{{ name }} app is running!</span>
-    <app-username></app-username>
+    <app-username [username]="'Chris'"></app-username>
+    <app-username [username]="'Siyao'"></app-username>
     <p *ngIf="name != 'Hank'" >Name updated!</p>
     <button (click)="onChangeName()">Change Name</button>
     <button (click)="onAddElement()">New Element</button>
     <ul>
-      <li *ngFor="let ele of elements" 
+      <li *ngFor="let ele of elements"
       [id] = "'element ' + ele"
       [ngStyle]="{backgroundColor: getColor(ele)}" >Element {{ele}}</li>
     </ul>

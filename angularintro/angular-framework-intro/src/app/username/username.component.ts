@@ -1,15 +1,12 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-username',
-    template: 
-    `
+    template:`
         <p>{{username}}</p>
     `
-
 })
 
 export class UsernameComponent{
-    username = 'Jovis';
-
+  @Input() username ='Kevin';
 }
