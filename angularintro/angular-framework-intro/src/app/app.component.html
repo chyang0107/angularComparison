@@ -331,8 +331,8 @@
     </svg>
 
     <span [ngClass]="{updated: name != 'Hank'}" >{{ name }} app is running!</span>
-    <app-username [username]="'Chris'"></app-username>
-    <app-username [username]="'Siyao'"></app-username>
+    <app-username [username]="'Chris'" (userClicked)="onUserWasClicked($event)" ></app-username>
+    <app-username [username]="'Siyao'" (userClicked)="onUserWasClicked($event)"></app-username>
     <p *ngIf="name != 'Hank'" >Name updated!</p>
     <button (click)="onChangeName()">Change Name</button>
     <button (click)="onAddElement()">New Element</button>

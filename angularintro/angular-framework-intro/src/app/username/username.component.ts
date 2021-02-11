@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
@@ -10,8 +10,9 @@ import { Component, Input, EventEmitter } from '@angular/core';
 
 export class UsernameComponent{
   @Input() username = 'Kevin';
-  userClicked = new EventEmitter<string>();
+  @Output() userClicked = new EventEmitter<string>();
   onUsernameClicked() {
     this.userClicked.emit(this.username);
   }
+  
 }
