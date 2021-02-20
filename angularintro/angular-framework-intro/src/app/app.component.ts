@@ -6,23 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Hank';
-  elements: number[] = [];
-  message: string = '';
-
-  onChangeName(){
-    this.name = 'Anna';
+  hobbies: string[] = ['Cooking', 'Sport'];
+  newHobbyInput: string = '';
+  onNewHobby() {
+    this.hobbies.push(this.newHobbyInput);
   }
-
-  onAddElement(){
-    this.elements.push(this.elements.length+1);
-  }
-
-  getColor(element:number){
-    return element % 2 === 0? 'green': 'red';
-  }
-  onUserWasClicked(usrName:string) {
-    alert(usrName);
-  }
-
 }
