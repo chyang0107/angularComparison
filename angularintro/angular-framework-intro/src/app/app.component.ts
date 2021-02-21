@@ -8,7 +8,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   hobbies: string[] = ['Cooking', 'Sport'];
   newHobbyInput: string = '';
+  hobbyWasDeleted = false;
+
   onNewHobby() {
-    this.hobbies.push(this.newHobbyInput);
+    if (this.newHobbyInput.length)
+    {
+      this.hobbies.push(this.newHobbyInput);
+      this.hobbyWasDeleted = false;
+    }
+
+  }
+
+  onRemoveHobby(hobby: string) {
+    const position = this.newHobbyInput.indexOf(hobby);
+    this.hobbies.splice(position, 1);
+    this.hobbyWasDeleted = true;
   }
 }

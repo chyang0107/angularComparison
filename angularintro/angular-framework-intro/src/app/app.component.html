@@ -1,6 +1,15 @@
 
 <input type="text" [(ngModel)]= 'newHobbyInput'>
 <button (click)='onNewHobby()'>New Hobby</button>
+<p *ngIf="hobbyWasDeleted">Hobby deleted!</p>
+<p [ngStyle]="{color: hobbies.length> 3 ? 'red' : 'green'}"
+  [ngClass]="'.multiple-hobbies'"
+  >
+
+Hobbies: {{hobbies.length}}</p>
 <ul>
-  <li *ngFor="let hobby of hobbies">{{hobby}}</li>
+  <li *ngFor="let hobby of hobbies"
+  (click)="onRemoveHobby(hobby)">{{hobby}}
+
+  </li>
 </ul>
