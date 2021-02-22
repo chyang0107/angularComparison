@@ -6,19 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Hank';
-  elements: number[] = [];
+  hobbies: string[] = ['Cooking', 'Sport'];
+  newHobbyInput: string = '';
+  hobbyWasDeleted = false;
 
-  onChangeName(){
-    this.name = 'Anna';
+  onNewHobby() {
+    if (this.newHobbyInput.length)
+    {
+      this.hobbies.push(this.newHobbyInput);
+      this.hobbyWasDeleted = false;
+    }
+
   }
 
-  onAddElement(){
-    this.elements.push(this.elements.length+1);
+  onRemoveHobby(hobby: string) {
+    const position = this.newHobbyInput.indexOf(hobby);
+    this.hobbies.splice(position, 1);
+    this.hobbyWasDeleted = true;
   }
-
-  getColor(element:number){
-    return element % 2 === 0? 'green': 'red';
-  }
-
 }
