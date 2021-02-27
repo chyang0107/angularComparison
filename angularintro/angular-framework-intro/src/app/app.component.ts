@@ -19,7 +19,7 @@ export class AppComponent {
 
   }
 
-  onRemoveHobby(hobby: string) {
+  onHobbyRemoved(hobby: string) {
     const position = this.newHobbyInput.indexOf(hobby);
     this.hobbies.splice(position, 1);
     this.hobbyWasDeleted = true;

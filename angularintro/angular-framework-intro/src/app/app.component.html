@@ -8,8 +8,10 @@
 
 Hobbies: {{hobbies.length}}</p>
 <ul>
-  <li *ngFor="let hobby of hobbies"
-  (click)="onRemoveHobby(hobby)">{{hobby}}
+  <app-hobby
+  *ngFor="let hobby of hobbies"
+  [hobbyName]="hobby"
+  (hobbyRemoved)="onHobbyRemoved($event)"
+  >{{hobby}}</app-hobby>
 
-  </li>
 </ul>
