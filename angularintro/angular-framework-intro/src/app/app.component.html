@@ -3,7 +3,7 @@
 <button (click)='onNewHobby()'>New Hobby</button>
 <p *ngIf="hobbyWasDeleted">Hobby deleted!</p>
 <p [ngStyle]="{color: hobbies.length> 3 ? 'red' : 'green'}"
-  [ngClass]="'.multiple-hobbies'"
+  [ngClass]="{'.multiple-hobbies':hobbies.length>3}"
   >
 
 Hobbies: {{hobbies.length}}</p>
